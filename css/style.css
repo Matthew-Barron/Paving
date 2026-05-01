@@ -1,0 +1,174 @@
+:root {
+  --primary: #0f172a;
+  --accent: #f59e0b;
+}
+
+/* GLOBAL */
+body {
+  font-family: Arial;
+  color: #0f172a;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+.glass-nav {
+  background: rgba(15,23,42,0.8);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand img {
+  width: 130px;
+}
+
+/* HERO (LCP OPTIMIZED) */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  /* 🚀 LCP OPTIMIZATION */
+  contain: layout paint;
+  will-change: transform;
+}
+
+/* HERO IMAGE (FAST RENDER) */
+.hero-img {
+  position: absolute;
+  inset: 0;              /* cleaner + faster than top/left/width/height */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+
+  /* 🚀 LCP OPTIMIZATION */
+  transform: translateZ(0);
+}
+
+/* OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 2;
+}
+
+/* CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-badges span {
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+/* TRUST */
+.trust-strip {
+  background: #f8fafc;
+  padding: 20px 0;
+  font-weight: bold;
+}
+
+/* ABOUT */
+.about-boxes div {
+  background: #f1f5f9;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+/* SERVICES */
+.service-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* IMAGES (OPTIMIZED) */
+img {
+  width: 100%;
+  border-radius: 12px;
+
+  /* 🚀 helps rendering stability */
+  content-visibility: auto;
+}
+
+/* CONTACT */
+.contact-section {
+  background: #f8fafc;
+}
+
+.contact-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+}
+
+.contact-card .icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.form-wrapper {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.form-control:focus {
+  border-color: #f59e0b;
+  box-shadow: none;
+}
+
+.btn-modern {
+  background: linear-gradient(90deg, #f59e0b, #1e293b);
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-modern:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* FOOTER */
+.footer {
+  background: var(--primary);
+  color: white;
+}
